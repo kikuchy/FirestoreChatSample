@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="transcript"
+                type="com.diverseinc.firestorechat.data.Transcript" />
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+        <TextView
+                android:id="@+id/timeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{transcript.createdAt}"
+                tools:text="12:00 PM" />
+
+        <Space
+                android:layout_width="8dp"
+                android:layout_height="wrap_content" />
+
+        <TextView
+                android:id="@+id/messageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{transcript.text}"
+                tools:text="ほげほげメッセージ" />
+    </LinearLayout>
+</layout>

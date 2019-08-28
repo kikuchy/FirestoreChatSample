@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+                name="viewmodel"
+                type="com.diverseinc.firestorechat.ui.rooms.RoomsViewModel" />
+        <variable
+                name="owner"
+                type="com.diverseinc.firestorechat.ui.rooms.RoomsActivity" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/roomsList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:items="@{viewmodel.roomList}" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_add_black_24dp"
+                android:onClick="@{(v) -> owner.onClickAdd()}"
+                tools:srcCompat="@tools:sample/avatars" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
